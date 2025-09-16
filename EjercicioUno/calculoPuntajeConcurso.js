@@ -9,27 +9,19 @@ function calculoPuntajeConcurso(respuestas, totalPreguntas){
         if(respuestas[i] === true){
             totalPuntaje += 10;
             contadorRespuestasCorrectas += 1
-        }else if (respuestas[i] === false){
+        }else if (respuestas[i] === false)
              totalPuntaje -= 2
-        }else{
+        else
             contadorSinRespuestas +=1
-        }
-    
     }
 
-    if(contadorSinRespuestas === totalPreguntas){
-        totalPuntaje = 0
-    }   
-
-    if(contadorRespuestasCorrectas === totalPreguntas){
+    if(contadorRespuestasCorrectas === totalPreguntas)
         totalPuntaje += 5 
-    }
+    
 
-     if(totalPuntaje < 0 ){
+     if(totalPuntaje < 0 || (contadorSinRespuestas === totalPreguntas))
         return 0
-    }
-
-   
+     
     return totalPuntaje
     
 }
